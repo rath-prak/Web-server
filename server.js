@@ -3,6 +3,7 @@ var express = require('express');
 //step 2, call express
 var app = express();
 var middleware = require('./middleware');
+var PORT = process.env.PORT || 3000;
 
 //create a route, 'get', corresponds to the http method
 // app.get('/', function(req, res){
@@ -21,7 +22,7 @@ app.use(express.static(__dirname + '/public'));
 
 
 //app to listen
-app.listen(3000, function(){
-	console.log("listening to port 3000...")
+app.listen(PORT, function(){
+	console.log("listening to port " + PORT)
 });
 
